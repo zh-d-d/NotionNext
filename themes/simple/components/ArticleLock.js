@@ -1,5 +1,7 @@
 import { useGlobal } from '@/lib/global'
 import { useEffect, useRef } from 'react'
+import {siteConfig} from "@/lib/config";
+import CONFIG from "@/themes/starter/config";
 
 /**
  * 加密文章校验组件
@@ -30,8 +32,11 @@ export default function ArticleLock (props) {
 
   return <div id='container' className='w-full flex justify-center items-center h-96 '>
         <div className='text-center space-y-3'>
-            <div className='font-bold'>{locale.COMMON.ARTICLE_LOCK_TIPS}</div>
+            <div className='flex mx-10'>
+                <img width="200" height="240" src='/images/xiaohongshu.png' />
+            </div>
             <div className='flex mx-4'>
+
                 <input id="password" type='password'
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') {
